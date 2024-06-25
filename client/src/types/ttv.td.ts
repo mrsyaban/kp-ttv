@@ -1,7 +1,8 @@
 export type TTV = {
     Id: string
     Name: string
-    BloodPressure: number
+    sistole: number
+    diastole: number
     PulseRate: number
     BreathingRate: number
     Temperature: number

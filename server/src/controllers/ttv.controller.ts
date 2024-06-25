@@ -22,12 +22,18 @@ export class TTVController {
     createTTVData() {
         return async (req: Request, res: Response) => {
             try {
+                const { name, sistole, diastole, pulseRate, breathingRate, temperature } = req.body;
+                console.log(req.body)
+                if (!name || !sistole || !diastole || !pulseRate || !breathingRate || !temperature) {
+                    return res.status(400).json({message:"All fields are required", status:false});
+                }
                 const ttvData = new this.model.mongooseModel({
-                    name: req.body.name,
-                    bloodPressure: req.body.bloodPressure,
-                    pulseRate: req.body.pulseRate,
-                    breathingRate: req.body.breathingRate,
-                    temperature: req.body.temperature
+                    name,
+                    sistole,
+                    diastole,
+                    pulseRate,
+                    breathingRate,
+                    temperature
                 });
                 await ttvData.save();
                 res.status(201).json({message:"TTV data created successfully", status:true, data:ttvData});

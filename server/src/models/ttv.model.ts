@@ -9,7 +9,8 @@ class TTVModel {
         const ttvSchema = new mongoose.Schema({
             ttvId: ObjectId,
             name: String,
-            bloodPressure: Number,
+            sistole: Number,
+            diastole: Number,
             pulseRate: Number,
             breathingRate: Number,
             temperature: Number,
