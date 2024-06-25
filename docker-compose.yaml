@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  client:
+    extends:
+      file: ./client/docker-compose.yaml
+      service: client
+    networks:
+      - klinik-pintar-net
+    depends_on:
+      - server
+    ports:
+      - "5173:5173"
+  server:
+    extends:
+      file: ./server/docker-compose.yaml
+      service: server
+    networks:
+      - klinik-pintar-net
+    ports:
+      - "3000:3000"
+networks:
+  klinik-pintar-net:

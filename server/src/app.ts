@@ -2,8 +2,9 @@ import express, { Express } from "express";
 import cors from "cors";
 import { LoginRouter } from "./routers/login.router";
 import dotenv from 'dotenv';
-dotenv.config();
 
+
+dotenv.config();
 
 export class App {
   private _port: number = 3000;
