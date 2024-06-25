@@ -1,5 +1,21 @@
 # TTV RECORDER
 
+### Tech used
+1. Client 
+- vue3 typescript
+- vite
+- axios
+- tailwind
+- shadcn
+- docker
+
+2. Server
+- express typescript
+- jwt
+- cors
+- mongodb
+- docker
+
 ### How to Run
 1. install the last version of nodejs
 2. fill required `env variable` on each server and client folder
